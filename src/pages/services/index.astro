@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+---
+
+<ul>
+  {services.map(item => (
+    <li>
+      <a href={`/services/${item.id}`}>  {/* 🔥 dùng id */}
+        {item.data.title}
+      </a>
+    </li>
+  ))}
+</ul>

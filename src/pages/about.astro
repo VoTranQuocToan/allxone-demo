@@ -1,0 +1,236 @@
+---
+const team = [
+  { name: "Nguyễn Văn A", role: "CEO & Founder", desc: "10+ năm kinh nghiệm xây dựng hệ thống enterprise", avatar: "A" },
+  { name: "Trần Văn B", role: "CTO", desc: "Chuyên gia Cloud, AI & System Architecture", avatar: "B" },
+  { name: "Lê Văn C", role: "Lead Developer", desc: "Fullstack developer, chuyên React & Node.js", avatar: "C" },
+  { name: "Phạm Văn D", role: "AI Engineer", desc: "Nghiên cứu và triển khai AI/ML thực tế", avatar: "D" },
+];
+
+const values = [
+  { icon: "🚀", title: "Innovation", desc: "Luôn đổi mới và áp dụng công nghệ mới nhất." },
+  { icon: "🤝", title: "Commitment", desc: "Cam kết chất lượng và tiến độ dự án." },
+  { icon: "⚡", title: "Speed", desc: "Triển khai nhanh chóng nhưng vẫn đảm bảo chất lượng." },
+  { icon: "🛡️", title: "Reliability", desc: "Đối tác đáng tin cậy cho doanh nghiệp." },
+];
+---
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>About — AllXOne</title>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero about-hero">
+  <div class="container">
+    <span class="section-tag">// ABOUT US</span>
+    <h1>
+      Chúng tôi là <span class="accent">AllXOne</span><br />
+      Đối tác công nghệ của bạn
+    </h1>
+    <p>
+      Chúng tôi giúp doanh nghiệp xây dựng, phát triển và mở rộng hệ thống công nghệ
+      với tư duy dịch vụ và chất lượng cao.
+    </p>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="section">
+  <div class="container about-grid">
+    <div>
+      <h2>Chúng tôi là ai?</h2>
+      <p>
+        AllXOne là công ty cung cấp dịch vụ công nghệ chuyên sâu trong lĩnh vực
+        phát triển phần mềm, AI, Cloud và Blockchain.
+      </p>
+      <p>
+        Với đội ngũ kỹ sư giàu kinh nghiệm, chúng tôi tập trung vào việc xây dựng
+        các giải pháp thực tế, tối ưu và có khả năng mở rộng cao.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3>Mission</h3>
+      <p>Giúp doanh nghiệp chuyển đổi số hiệu quả.</p>
+
+      <h3>Vision</h3>
+      <p>Trở thành công ty công nghệ hàng đầu tại Việt Nam.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// CORE VALUES</span>
+      <h2>Giá trị cốt lõi</h2>
+    </div>
+
+    <div class="grid">
+      {values.map(v => (
+        <div class="card">
+          <div class="icon">{v.icon}</div>
+          <h3>{v.title}</h3>
+          <p>{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// TEAM</span>
+      <h2>Đội ngũ của chúng tôi</h2>
+    </div>
+
+    <div class="grid">
+      {team.map(member => (
+        <div class="card team-card">
+          <div class="avatar">{member.avatar}</div>
+          <h3>{member.name}</h3>
+          <span class="role">{member.role}</span>
+          <p>{member.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Bắt đầu dự án với chúng tôi</h2>
+    <p>Chúng tôi luôn sẵn sàng đồng hành cùng bạn</p>
+    <a href="/#contact" class="btn">Liên hệ ngay</a>
+  </div>
+</section>
+
+<style>
+:root {
+  --bg: #060810;
+  --bg2: #0c1020;
+  --text: #f0f4ff;
+  --muted: #8892a4;
+  --accent: #00e5ff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.bg {
+  background: var(--bg2);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  padding: 120px 2rem 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.about-card {
+  background: var(--bg2);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg,#7c3aed,#00e5ff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg2);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+}
+</style>
+
+</body>
+</html>

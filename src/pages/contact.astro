@@ -1,0 +1,211 @@
+---
+const contacts = [
+  {
+    icon: "📍",
+    title: "Địa chỉ",
+    content: "10A Trần Quang Diệu, P.14, Q.3, TP.HCM"
+  },
+  {
+    icon: "📧",
+    title: "Email",
+    content: "info@allxone.vn",
+    link: "mailto:info@allxone.vn"
+  },
+  {
+    icon: "📞",
+    title: "Phone",
+    content: "0123 456 789",
+    link: "tel:0123456789"
+  }
+];
+---
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact — AllXOne</title>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="section-tag">// CONTACT</span>
+    <h1>Liên hệ với <span class="accent">chúng tôi</span></h1>
+    <p>Chúng tôi luôn sẵn sàng hỗ trợ và đồng hành cùng bạn</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="section">
+  <div class="container">
+    <div class="grid">
+      {contacts.map(c => (
+        <div class="card">
+          <div class="icon">{c.icon}</div>
+          <h3>{c.title}</h3>
+          {c.link ? (
+            <a href={c.link}>{c.content}</a>
+          ) : (
+            <p>{c.content}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section bg">
+  <div class="container form-container">
+    <div class="form-left">
+      <h2>Gửi tin nhắn</h2>
+      <p>Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại sớm nhất.</p>
+    </div>
+
+    <form class="form">
+      <input type="text" placeholder="Họ và tên" required />
+      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="Số điện thoại" />
+      <textarea placeholder="Nội dung"></textarea>
+      <button type="submit">Gửi liên hệ</button>
+    </form>
+  </div>
+</section>
+
+<!-- GOOGLE MAP -->
+<section class="section">
+  <div class="container">
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=10A%20Tr%E1%BA%A7n%20Quang%20Di%E1%BB%87u,%20Qu%E1%BA%ADn%203,%20TP.HCM&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+:root {
+  --bg: #060810;
+  --bg2: #0c1020;
+  --text: #f0f4ff;
+  --muted: #8892a4;
+  --accent: #00e5ff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.bg {
+  background: var(--bg2);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  padding: 120px 2rem 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.section-tag {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* FORM */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.form button {
+  padding: 0.8rem;
+  background: var(--accent);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MAP */
+.map {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+@media(max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+</body>
+</html>

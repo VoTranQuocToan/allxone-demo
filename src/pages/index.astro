@@ -1,0 +1,878 @@
+---
+const services = [
+  { icon: "💻", title: "Phát Triển Phần Mềm", desc: "Web App, Mobile App, API & hệ thống backend tùy chỉnh theo yêu cầu.", tags: ["React", "Node.js", "Flutter", "Golang"] },
+  { icon: "☁️", title: "Cloud & AI", desc: "Triển khai hạ tầng cloud, tích hợp AI/ML, OCR, NLP và Big Data.", tags: ["AWS", "GCP", "TensorFlow", "PyTorch"] },
+  { icon: "🔗", title: "Blockchain", desc: "Xây dựng smart contract, DApps và giải pháp Web3 doanh nghiệp.", tags: ["Solidity", "Ethereum", "Hyperledger"] },
+  { icon: "🔄", title: "Chuyển Đổi Số", desc: "Tư vấn và triển khai digital transformation toàn diện cho doanh nghiệp.", tags: ["ERP", "CRM", "Automation", "IoT"] },
+  { icon: "👥", title: "IT Staffing", desc: "Cung cấp nhân sự IT chất lượng cao, tuyển dụng và gia công nhân lực.", tags: ["Headhunting", "Outsource", "Offshore"] },
+  { icon: "📊", title: "Tư Vấn IT", desc: "Thiết kế kiến trúc hệ thống, audit công nghệ và lộ trình phát triển.", tags: ["Architecture", "Audit", "Roadmap"] },
+];
+const stats = [
+  { num: "50+", label: "Dự án hoàn thành" },
+  { num: "30+", label: "Khách hàng tin tưởng" },
+  { num: "5+",  label: "Năm kinh nghiệm" },
+  { num: "20+", label: "Chuyên gia công nghệ" },
+];
+const products = [
+  { name: "AI Recruitment Platform", desc: "Nền tảng tuyển dụng AI & Big Data, kết nối ứng viên và nhà tuyển dụng thông minh.", tag: "AI · Recruitment" },
+  { name: "GameHub Platform", desc: "Tập hợp game web & mobile, đa thể loại, đồ họa đẹp trên cả hai nền tảng.", tag: "Gaming · Web · Mobile" },
+  { name: "Music Converter", desc: "Chuyển đổi file nhạc và link thành XML để tải về hoặc nghe trực tuyến.", tag: "Audio · Converter" },
+];
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AllXOne — Delivered With A Service MindSet</title>
+  <meta name="description" content="AllXOne là công ty IT chuyên cung cấp dịch vụ phát triển phần mềm, AI, Cloud, Blockchain, tuyển dụng và tư vấn công nghệ tại TP.HCM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-x">ALL</span><span class="logo-accent">X</span><span class="logo-x">ONE</span>
+    </a>
+    <ul class="nav-links" id="menu"></ul>
+    <a href="mailto:info@allxone.vn" class="btn-nav" data-i18n="nav.contact">Liên hệ ngay</a>
+    <div class="lang-switcher" aria-label="Chuyển ngôn ngữ">
+      <button class="lang-btn active" data-lang="vi">VI</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="ja">JP</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span data-i18n="hero.badge">IT Services · HCM City, Vietnam</span>
+    </div>
+    <h1 class="hero-title" data-i18n-html="hero.title">
+      Giải pháp công nghệ<br />
+      <span class="title-accent">toàn diện</span> cho<br />
+      doanh nghiệp bạn
+    </h1>
+    <p class="hero-sub" data-i18n="hero.sub">
+      Delivered With A Service MindSet — Chúng tôi xây dựng phần mềm, AI,
+      Cloud và cung cấp nhân lực IT chất lượng cao để doanh nghiệp của bạn
+      phát triển bứt phá.
+    </p>
+    <div class="hero-cta">
+      <a href="#services" class="btn-primary" data-i18n="hero.cta1">Xem dịch vụ</a>
+      <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Nói chuyện với chúng tôi →</a>
+    </div>
+    <div class="hero-tags">
+      <span>Web App</span><span>Mobile App</span><span>AI / ML</span>
+      <span>Cloud</span><span>Blockchain</span><span>IT Staffing</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-card">
+      <div class="code-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="code-filename">allxone.config.ts</span>
+      </div>
+      <pre class="code-body"><code><span class="c-kw">export const</span> <span class="c-fn">config</span> = &#123;
+  <span class="c-key">services</span>: [
+    <span class="c-str">"Software Dev"</span>,
+    <span class="c-str">"Cloud & AI"</span>,
+    <span class="c-str">"Blockchain"</span>,
+    <span class="c-str">"IT Staffing"</span>,
+  ],
+  <span class="c-key">mindset</span>: <span class="c-str">"Service First"</span>,
+  <span class="c-key">location</span>: <span class="c-str">"HCM City 🇻🇳"</span>,
+  <span class="c-key">quality</span>: <span class="c-str">"Excellence"</span>,
+&#125;</code></pre>
+    </div>
+    <div class="float-card fc-1">
+      <span class="fc-icon">⚡</span>
+      <div><div class="fc-label">Delivery Speed</div><div class="fc-value">On Time</div></div>
+    </div>
+    <div class="float-card fc-2">
+      <span class="fc-icon">🛡️</span>
+      <div><div class="fc-label">Code Quality</div><div class="fc-value">Production Ready</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<section class="stats-bar">
+  <div class="stat-item"><span class="stat-num">50+</span><span class="stat-label" data-i18n="stats.projects">Dự án hoàn thành</span></div>
+  <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label" data-i18n="stats.clients">Khách hàng tin tưởng</span></div>
+  <div class="stat-item"><span class="stat-num">5+</span><span class="stat-label" data-i18n="stats.years">Năm kinh nghiệm</span></div>
+  <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label" data-i18n="stats.experts">Chuyên gia công nghệ</span></div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="services.tag">// DỊCH VỤ</span>
+      <h2 data-i18n-html="services.title">Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span></h2>
+      <p data-i18n="services.sub">Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.</p>
+    </div>
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <div class="service-card" style={`--delay:${i * 0.08}s`}>
+          <div class="service-icon">{s.icon}</div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+          <div class="service-tags">{s.tags.map(t => <span>{t}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section about-section" id="about">
+  <div class="container about-grid">
+    <div class="about-left">
+      <span class="section-tag" data-i18n="about.tag">// VỀ CHÚNG TÔI</span>
+      <h2 data-i18n-html="about.title">Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết</h2>
+      <p class="about-desc" data-i18n-html="about.desc">
+        AllXOne là công ty TNHH Dịch vụ IT X, hoạt động tại TP.HCM với sứ mệnh
+        cung cấp dịch vụ công nghệ đáng tin cậy và nhất quán. Chúng tôi tin vào
+        câu ngạn ngữ <em>"Theo đuổi sự xuất sắc và thành công chắc chắn sẽ theo sau."</em>
+      </p>
+      <div class="about-features">
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f1">Nhóm full-stack từ frontend đến backend</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f2">Chuyên gia AI, Cloud và Blockchain</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f3">Hợp tác linh hoạt, giao tiếp minh bạch</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f4">Cam kết chất lượng và đúng tiến độ</span></div>
+      </div>
+      <div class="about-cta"><a href="/vi/ve-chung-toi/" class="btn-primary" data-i18n="about.cta">Tìm hiểu thêm</a></div>
+    </div>
+    <div class="about-right">
+      <div class="about-card-stack">
+        <div class="ac ac-back"></div>
+        <div class="ac ac-mid"></div>
+        <div class="ac ac-front">
+          <div class="ac-header">
+            <div class="ac-avatar">AX</div>
+            <div><div class="ac-name">AllXOne Team</div><div class="ac-role">10A Trần Quang Diệu, Q.3 · HCM</div></div>
+          </div>
+          <div class="ac-divider"></div>
+          <div class="ac-skills">
+            <div class="skill-row"><span>Web Development</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div class="skill-row"><span>Mobile App</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span>AI / Machine Learning</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><span>Cloud Infrastructure</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="products.tag">// SẢN PHẨM</span>
+      <h2 data-i18n-html="products.title">Các sản phẩm <span class="accent">nổi bật</span></h2>
+      <p data-i18n="products.sub">Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.</p>
+    </div>
+    <div class="products-grid">
+      {products.map((p, i) => (
+        <div class="product-card" style={`--delay:${i * 0.1}s`}>
+          <div class="product-tag">{p.tag}</div>
+          <h3>{p.name}</h3>
+          <p>{p.desc}</p>
+          <a href="#" class="product-link" data-i18n="products.detail">Xem chi tiết →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA / CONTACT ─── -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"><div class="orb orb-cta-1"></div><div class="orb orb-cta-2"></div></div>
+  <div class="container cta-inner">
+    <span class="section-tag" data-i18n="cta.tag">// LIÊN HỆ</span>
+    <h2 data-i18n-html="cta.title">Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span></h2>
+    <p data-i18n="cta.sub">Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.</p>
+    <div class="cta-actions">
+      <a href="mailto:info@allxone.vn" class="btn-primary btn-large">info@allxone.vn</a>
+      <a href="https://www.facebook.com/AllXOne.vn" target="_blank" rel="noopener" class="btn-ghost">Facebook →</a>
+    </div>
+    <div class="cta-info">
+      <span>📍 10A Trần Quang Diệu, P.14, Q.3, TP.HCM</span>
+      <span>·</span>
+      <span>📍 236 Đinh Bộ Lĩnh, P.26, Bình Thạnh, TP.HCM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-x">ALL</span><span class="logo-accent">X</span><span class="logo-x">ONE</span>
+      <p>Delivered With A Service MindSet</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Dịch vụ</h4>
+        <a href="#" data-i18n="svc.s1.title">Phát triển phần mềm</a>
+        <a href="#">Cloud & AI</a>
+        <a href="#">Blockchain</a>
+        <a href="#" data-i18n="svc.s5.title">IT Staffing</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.company">Công ty</h4>
+        <a href="/vi/ve-chung-toi/" data-i18n="about.cta">Về chúng tôi</a>
+        <a href="/vi/product-it-services-2/" data-i18n="nav.products">Sản phẩm</a>
+        <a href="/vi/product-it-services-2/tuyen-dung/" data-i18n="footer.recruit">Tuyển dụng</a>
+        <a href="mailto:info@allxone.vn" data-i18n="nav.contact_link">Liên hệ</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.copy">© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X</span>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════
+     is:global — bắt buộc để CSS áp dụng cho
+     các element được JS inject động (menu)
+════════════════════════════════════════════════ -->
+<style is:global>
+  :lang(ja) body, :lang(ja) p, :lang(ja) span, :lang(ja) a, :lang(ja) li {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  }
+  :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060810;
+    --bg2: #0c1020;
+    --bg3: #111827;
+    --accent: #00e5ff;
+    --accent2: #7c3aed;
+    --text: #f0f4ff;
+    --muted: #8892a4;
+    --border: rgba(255,255,255,0.07);
+    --card-bg: rgba(255,255,255,0.03);
+    --font-display: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ══════════════════════════════
+     NAV
+  ══════════════════════════════ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(6,8,16,0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 2rem; height: 64px;
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .logo {
+    text-decoration: none; font-family: var(--font-display);
+    font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; flex-shrink: 0;
+  }
+  .logo-x { color: var(--text); }
+  .logo-accent { color: var(--accent); }
+
+  /* ── Nav list cấp 1 ── */
+  .nav-links {
+    display: flex; align-items: center; gap: 2px;
+    list-style: none; margin-left: auto; padding: 0;
+  }
+  .nav-links > li { position: relative; }
+
+  /* Link cấp 1 */
+  .nav-links > li > a {
+    display: flex; align-items: center; gap: 5px;
+    padding: 0.4rem 0.75rem; border-radius: 7px;
+    font-size: 0.875rem; font-weight: 400;
+    color: var(--muted); text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links > li > a:hover,
+  .nav-links > li:hover > a {
+    color: var(--text);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* Mũi tên xuống */
+  .nav-links > li.has-children > a::after {
+    content: '';
+    display: inline-block; width: 0; height: 0;
+    border-left: 3.5px solid transparent;
+    border-right: 3.5px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55; flex-shrink: 0;
+    transition: transform 0.22s ease, opacity 0.22s;
+  }
+  .nav-links > li.has-children:hover > a::after {
+    transform: rotate(180deg); opacity: 1;
+  }
+
+  /* ── Dropdown panel dùng chung ── */
+  .nav-links .dropdown {
+    position: absolute;
+    visibility: hidden; opacity: 0; pointer-events: none;
+    list-style: none; padding: 6px;
+    min-width: 210px;
+    background: rgba(9, 13, 26, 0.97);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 14px;
+    box-shadow:
+      0 24px 64px rgba(0,0,0,0.65),
+      0 0 0 1px rgba(0,229,255,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 9999;
+  }
+
+  /* Dropdown cấp 1: mở xuống */
+  .nav-links > li > .dropdown {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  /* Caret trên */
+  .nav-links > li > .dropdown::before {
+    content: '';
+    position: absolute; top: -5px; left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px; height: 10px;
+    background: rgba(9,13,26,0.97);
+    border-left: 1px solid rgba(255,255,255,0.09);
+    border-top: 1px solid rgba(255,255,255,0.09);
+    border-radius: 2px 0 0 0;
+  }
+  .nav-links > li:hover > .dropdown {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Link trong dropdown */
+  .nav-links .dropdown > li { position: relative; }
+  .nav-links .dropdown > li > a {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 0.48rem 0.85rem;
+    font-size: 0.845rem; font-weight: 400;
+    color: rgba(220, 228, 255, 0.72);
+    text-decoration: none; border-radius: 9px; white-space: nowrap;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, background 0.15s, border-color 0.15s, padding-left 0.15s;
+  }
+  .nav-links .dropdown > li > a:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--accent);
+    padding-left: calc(0.85rem + 4px);
+    border-radius: 0 9px 9px 0;
+  }
+
+  /* Divider */
+  .nav-links .dropdown > li.divider {
+    height: 1px; background: rgba(255,255,255,0.07);
+    margin: 4px 8px; pointer-events: none; border-radius: 0;
+  }
+
+  /* Dropdown cấp 2: mở sang phải */
+  .nav-links .dropdown .dropdown {
+    top: -6px; left: calc(100% + 8px);
+    transform: translateX(0) translateY(-4px);
+  }
+  /* Caret trái */
+  .nav-links .dropdown .dropdown::before {
+    top: 14px; left: -5px;
+    transform: rotate(-45deg);
+  }
+  .nav-links .dropdown > li:hover > .dropdown {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    transform: translateX(0) translateY(0);
+  }
+
+  /* Mũi tên phải cho sub-menu */
+  .nav-links .dropdown > li.has-children > a::after {
+    content: '';
+    display: inline-block; width: 0; height: 0;
+    border-top: 3.5px solid transparent;
+    border-bottom: 3.5px solid transparent;
+    border-left: 4px solid currentColor;
+    opacity: 0.5; margin-left: auto; flex-shrink: 0;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .nav-links .dropdown > li.has-children:hover > a::after {
+    transform: translateX(3px); opacity: 1;
+  }
+
+  /* ── Nút CTA nav ── */
+  .btn-nav {
+    font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
+    padding: 0.5rem 1.1rem; border-radius: 8px;
+    background: var(--accent); color: #000;
+    text-decoration: none; transition: opacity 0.2s;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .btn-nav:hover { opacity: 0.85; }
+
+  /* ── Hamburger ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ══════════════════════════════
+     HERO
+  ══════════════════════════════ */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 100px 2rem 4rem;
+    max-width: 1200px; margin: 0 auto;
+    position: relative; gap: 4rem; flex-wrap: wrap;
+  }
+  .hero-bg { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
+  .grid-overlay {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; }
+  .orb-1 { width: 500px; height: 500px; background: var(--accent2); top: -100px; right: -100px; }
+  .orb-2 { width: 400px; height: 400px; background: var(--accent); bottom: 100px; left: -50px; opacity: 0.1; }
+  .orb-3 { width: 300px; height: 300px; background: #1d4ed8; top: 50%; left: 40%; opacity: 0.15; }
+
+  .hero-content { flex: 1; min-width: 320px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,229,255,0.07); border: 1px solid rgba(0,229,255,0.15);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);
+    margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 6px var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .hero-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.1;
+    letter-spacing: -0.03em; animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .title-accent { color: var(--accent); }
+  .hero-sub {
+    max-width: 520px; color: var(--muted); font-size: 1.05rem;
+    margin-top: 1.25rem; animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary {
+    display: inline-block; padding: 0.75rem 1.6rem;
+    background: var(--accent); color: #000; font-weight: 600;
+    border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.25); }
+  .btn-ghost {
+    display: inline-block; padding: 0.75rem 1.6rem;
+    border: 1px solid var(--border); color: var(--text);
+    border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); background: rgba(0,229,255,0.04); }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-tags span {
+    font-size: 0.75rem; font-family: var(--font-mono);
+    padding: 0.3rem 0.7rem; border-radius: 6px;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted);
+  }
+
+  /* Hero visual */
+  .hero-visual { flex: 0 0 400px; position: relative; animation: fadeUp 0.7s 0.3s ease both; }
+  .code-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .code-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0.75rem 1rem; background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .code-header .dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: none; animation: none; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #28c840; }
+  .code-filename { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-left: 4px; }
+  .code-body { padding: 1.25rem 1.5rem; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7; overflow: auto; }
+  .c-kw { color: #c792ea; } .c-fn { color: #82aaff; } .c-key { color: #80cbc4; } .c-str { color: #c3e88d; }
+
+  .float-card {
+    position: absolute; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+  }
+  .fc-1 { bottom: -20px; right: -30px; animation: float 3s ease-in-out infinite; }
+  .fc-2 { top: -20px; left: -30px; animation: float 3s 1.5s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .fc-icon { font-size: 1.4rem; }
+  .fc-label { font-size: 0.7rem; color: var(--muted); }
+  .fc-value { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+
+  /* ── STATS ── */
+  .stats-bar {
+    background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    display: flex; justify-content: center; flex-wrap: wrap;
+  }
+  .stat-item { flex: 1; min-width: 160px; padding: 2rem 1rem; text-align: center; border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { display: block; font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--accent); }
+  .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; display: block; }
+
+  /* ── SECTION ── */
+  .section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-tag { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.05em; display: block; margin-bottom: 1rem; }
+  .section-header h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.02em; }
+  .section-header p { color: var(--muted); max-width: 500px; margin: 0.75rem auto 0; }
+  .accent { color: var(--accent); }
+
+  /* ── SERVICES ── */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .service-card { background: var(--card-bg); padding: 2rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.3s; animation: fadeUp 0.5s var(--delay) ease both; }
+  .service-card:hover { background: rgba(0,229,255,0.04); }
+  .service-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .service-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .service-tags span { font-size: 0.7rem; font-family: var(--font-mono); padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.1); color: var(--accent); }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-left .section-tag { text-align: left; }
+  .about-left h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.15; letter-spacing: -0.02em; text-align: left; }
+  .about-desc { color: var(--muted); margin-top: 1rem; max-width: 480px; }
+  .about-desc em { color: var(--text); font-style: italic; }
+  .about-features { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .af-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+  .af-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .about-cta { margin-top: 2rem; }
+  .about-card-stack { position: relative; height: 360px; }
+  .ac { position: absolute; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .ac-back { inset: 24px 8px 0 8px; background: rgba(124,58,237,0.05); transform: rotate(3deg); }
+  .ac-mid { inset: 12px 4px 0 4px; background: rgba(0,229,255,0.03); transform: rotate(1.5deg); }
+  .ac-front { inset: 0; background: var(--bg3); padding: 1.5rem; display: flex; flex-direction: column; }
+  .ac-header { display: flex; align-items: center; gap: 12px; }
+  .ac-avatar { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, var(--accent2), var(--accent)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: #fff; }
+  .ac-name { font-weight: 600; font-size: 0.95rem; }
+  .ac-role { font-size: 0.75rem; color: var(--muted); }
+  .ac-divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+  .ac-skills { display: flex; flex-direction: column; gap: 0.9rem; }
+  .skill-row { display: flex; flex-direction: column; gap: 5px; }
+  .skill-row span { font-size: 0.78rem; color: var(--muted); }
+  .skill-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
+  .skill-fill { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 4px; }
+
+  /* ── PRODUCTS ── */
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .product-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.3s, border-color 0.3s; animation: fadeUp 0.5s var(--delay) ease both; }
+  .product-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.2); }
+  .product-tag { font-size: 0.72rem; font-family: var(--font-mono); color: var(--accent2); background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2); padding: 0.25rem 0.65rem; border-radius: 6px; display: inline-block; margin-bottom: 1rem; }
+  .product-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .product-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .product-link { font-size: 0.875rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+  .product-link:hover { text-decoration: underline; }
+
+  /* ── CTA ── */
+  .cta-section { position: relative; padding: 6rem 2rem; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; pointer-events: none; }
+  .orb-cta-1 { position: absolute; width: 600px; height: 600px; background: var(--accent2); top: -200px; left: -100px; border-radius: 50%; filter: blur(100px); opacity: 0.15; }
+  .orb-cta-2 { position: absolute; width: 400px; height: 400px; background: var(--accent); bottom: -100px; right: -50px; border-radius: 50%; filter: blur(80px); opacity: 0.1; }
+  .cta-inner { position: relative; }
+  .cta-inner h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem,4vw,3.2rem); letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
+  .cta-inner p { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+  .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .btn-large { padding: 1rem 2rem; font-size: 1rem; }
+  .cta-info { margin-top: 2rem; font-size: 0.82rem; color: var(--muted); display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1rem; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 0 0; }
+  .footer-inner { display: flex; gap: 3rem; flex-wrap: wrap; justify-content: space-between; }
+  .footer-brand .logo-x, .footer-brand .logo-accent { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; }
+  .footer-brand p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+  .footer-links { display: flex; gap: 3rem; flex-wrap: wrap; }
+  .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col h4 { font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+  .footer-col a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--text); }
+  .footer-bottom { text-align: center; padding: 1.5rem 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); margin-top: 3rem; }
+
+  /* ── LANG SWITCHER ── */
+  .lang-switcher { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; flex-shrink: 0; }
+  .lang-btn { background: none; border: none; cursor: pointer; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--muted); padding: 2px 6px; border-radius: 5px; transition: color 0.2s, background 0.2s; letter-spacing: 0.05em; }
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active { color: var(--accent); background: rgba(0,229,255,0.08); }
+  .lang-sep { color: var(--border); font-size: 0.75rem; user-select: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { flex-direction: column; padding-top: 80px; }
+    .hero-visual { flex: none; width: 100%; max-width: 400px; align-self: center; }
+    .fc-1 { right: 0; } .fc-2 { left: 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .nav-links { display: none; }
+    .btn-nav { display: none; }
+    .hamburger { display: flex; margin-left: auto; }
+  }
+  @media (max-width: 600px) {
+    .stat-item { min-width: 50%; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  /* ══ LOAD MENU ══ */
+  async function loadMenu() {
+  try {
+    const res = await fetch('https://backend.votranquoctoan2004.workers.dev/api/menus');
+    if (!res.ok) throw new Error('API lỗi');
+
+    const menus = await res.json();
+
+    // ⚠️ BUILD TREE Ở ĐÂY
+    const tree = buildTree(menus);
+
+    document.getElementById('menu').innerHTML = renderMenu(tree);
+  } catch (err) {
+    console.error('Lỗi load menu:', err);
+  }
+}
+
+  function renderMenu(items, level = 0) {
+    return items.map(item => {
+      const hasChildren = item.children && item.children.length > 0;
+      return `
+        <li class="${hasChildren ? 'has-children' : ''}">
+          <a href="${item.url}">${item.name}</a>
+          ${hasChildren ? `<ul class="dropdown">${renderMenu(item.children, level + 1)}</ul>` : ''}
+        </li>
+      `;
+    }).join('');
+  }
+
+    function buildTree(items) {
+    const map = {};
+    const roots = [];
+
+    // Tạo map id → node
+    items.forEach(item => {
+      map[item.id] = { ...item, children: [] };
+    });
+
+    // Gắn vào cha
+    items.forEach(item => {
+      if (item.parent_id === 0) {
+        roots.push(map[item.id]);
+      } else {
+        if (map[item.parent_id]) {
+          map[item.parent_id].children.push(map[item.id]);
+        }
+      }
+    });
+
+    return roots;
+  }
+
+  document.addEventListener('DOMContentLoaded', loadMenu);
+
+  /* ══ I18N ══ */
+  const T = {
+    vi: {
+      "nav.contact": "Liên hệ ngay",
+      "hero.badge": "IT Services · TP.HCM, Việt Nam",
+      "hero.title": `Giải pháp công nghệ<br /><span class="title-accent">toàn diện</span> cho<br />doanh nghiệp bạn`,
+      "hero.sub": "Delivered With A Service MindSet — Chúng tôi xây dựng phần mềm, AI, Cloud và cung cấp nhân lực IT chất lượng cao để doanh nghiệp của bạn phát triển bứt phá.",
+      "hero.cta1": "Xem dịch vụ", "hero.cta2": "Nói chuyện với chúng tôi →",
+      "stats.projects": "Dự án hoàn thành", "stats.clients": "Khách hàng tin tưởng", "stats.years": "Năm kinh nghiệm", "stats.experts": "Chuyên gia công nghệ",
+      "services.tag": "// DỊCH VỤ", "services.title": `Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span>`, "services.sub": "Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.",
+      "svc.s1.title": "Phát Triển Phần Mềm", "svc.s1.desc": "Web App, Mobile App, API & hệ thống backend tùy chỉnh theo yêu cầu.",
+      "svc.s2.title": "Cloud & AI", "svc.s2.desc": "Triển khai hạ tầng cloud, tích hợp AI/ML, OCR, NLP và Big Data.",
+      "svc.s3.title": "Blockchain", "svc.s3.desc": "Xây dựng smart contract, DApps và giải pháp Web3 doanh nghiệp.",
+      "svc.s4.title": "Chuyển Đổi Số", "svc.s4.desc": "Tư vấn và triển khai digital transformation toàn diện cho doanh nghiệp.",
+      "svc.s5.title": "IT Staffing", "svc.s5.desc": "Cung cấp nhân sự IT chất lượng cao, tuyển dụng và gia công nhân lực.",
+      "svc.s6.title": "Tư Vấn IT", "svc.s6.desc": "Thiết kế kiến trúc hệ thống, audit công nghệ và lộ trình phát triển.",
+      "about.tag": "// VỀ CHÚNG TÔI", "about.title": `Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết`,
+      "about.desc": `AllXOne là công ty TNHH Dịch vụ IT X, hoạt động tại TP.HCM với sứ mệnh cung cấp dịch vụ công nghệ đáng tin cậy và nhất quán. Chúng tôi tin vào câu ngạn ngữ <em>"Theo đuổi sự xuất sắc và thành công chắc chắn sẽ theo sau."</em>`,
+      "about.f1": "Nhóm full-stack từ frontend đến backend", "about.f2": "Chuyên gia AI, Cloud và Blockchain",
+      "about.f3": "Hợp tác linh hoạt, giao tiếp minh bạch", "about.f4": "Cam kết chất lượng và đúng tiến độ", "about.cta": "Tìm hiểu thêm",
+      "products.tag": "// SẢN PHẨM", "products.title": `Các sản phẩm <span class="accent">nổi bật</span>`, "products.sub": "Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.", "products.detail": "Xem chi tiết →",
+      "prod.p1.name": "AI Recruitment Platform", "prod.p1.desc": "Nền tảng tuyển dụng AI & Big Data, kết nối ứng viên và nhà tuyển dụng thông minh.",
+      "prod.p2.name": "GameHub Platform", "prod.p2.desc": "Tập hợp game web & mobile, đa thể loại, đồ họa đẹp trên cả hai nền tảng.",
+      "prod.p3.name": "Music Converter", "prod.p3.desc": "Chuyển đổi file nhạc và link thành XML để tải về hoặc nghe trực tuyến.",
+      "cta.tag": "// LIÊN HỆ", "cta.title": `Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span>`, "cta.sub": "Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.",
+      "footer.services": "Dịch vụ", "footer.company": "Công ty", "footer.recruit": "Tuyển dụng", "footer.copy": "© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X",
+      "nav.products": "Sản phẩm", "nav.contact_link": "Liên hệ",
+    },
+    en: {
+      "nav.contact": "Get In Touch",
+      "hero.badge": "IT Services · Ho Chi Minh City, Vietnam",
+      "hero.title": `Complete technology<br />solutions for<br /><span class="title-accent">your business</span>`,
+      "hero.sub": "Delivered With A Service MindSet — We build software, AI, Cloud solutions and supply top-tier IT talent to help your business break through.",
+      "hero.cta1": "Our Services", "hero.cta2": "Talk to us →",
+      "stats.projects": "Projects Delivered", "stats.clients": "Trusted Clients", "stats.years": "Years of Experience", "stats.experts": "Tech Experts",
+      "services.tag": "// SERVICES", "services.title": `What can we do<br /><span class="accent">for you?</span>`, "services.sub": "From idea to product — we partner with you at every stage of your technology journey.",
+      "svc.s1.title": "Software Development", "svc.s1.desc": "Web Apps, Mobile Apps, APIs & custom backend systems built to your requirements.",
+      "svc.s2.title": "Cloud & AI", "svc.s2.desc": "Cloud infrastructure deployment, AI/ML integration, OCR, NLP and Big Data solutions.",
+      "svc.s3.title": "Blockchain", "svc.s3.desc": "Smart contracts, DApps and enterprise Web3 solutions.",
+      "svc.s4.title": "Digital Transformation", "svc.s4.desc": "Consulting and end-to-end digital transformation implementation for enterprises.",
+      "svc.s5.title": "IT Staffing", "svc.s5.desc": "High-quality IT talent acquisition, recruitment and offshore outsourcing services.",
+      "svc.s6.title": "IT Consulting", "svc.s6.desc": "System architecture design, technology audits and development roadmap planning.",
+      "about.tag": "// ABOUT US", "about.title": `A passionate team of<br /><span class="accent">experts</span>`,
+      "about.desc": `AllXOne (IT X Services Co., Ltd.) operates in Ho Chi Minh City with a mission to deliver reliable and consistent technology services. We believe in the motto <em>"Pursue excellence and success will surely follow."</em>`,
+      "about.f1": "Full-stack team from frontend to backend", "about.f2": "Specialists in AI, Cloud and Blockchain",
+      "about.f3": "Flexible collaboration, transparent communication", "about.f4": "Committed to quality and on-time delivery", "about.cta": "Learn More",
+      "products.tag": "// PRODUCTS", "products.title": `Our <span class="accent">featured products</span>`, "products.sub": "A diverse portfolio — from AI recruitment platforms to gaming apps and audio conversion tools.", "products.detail": "View details →",
+      "prod.p1.name": "AI Recruitment Platform", "prod.p1.desc": "AI & Big Data recruitment platform intelligently connecting candidates with employers.",
+      "prod.p2.name": "GameHub Platform", "prod.p2.desc": "A collection of web & mobile games across multiple genres with stunning graphics.",
+      "prod.p3.name": "Music Converter", "prod.p3.desc": "Convert music files and links to XML format for download or online streaming.",
+      "cta.tag": "// CONTACT", "cta.title": `Ready to start<br /><span class="accent">your project?</span>`, "cta.sub": "Let's talk — from simple ideas to complex systems, we're always ready to help.",
+      "footer.services": "Services", "footer.company": "Company", "footer.recruit": "Careers", "footer.copy": "© 2024 AllXOne — IT X SERVICES CO., LTD.",
+      "nav.products": "Products", "nav.contact_link": "Contact",
+    },
+    ja: {
+      "nav.contact": "お問い合わせ",
+      "hero.badge": "ITサービス · ホーチミン市、ベトナム",
+      "hero.title": `貴社のための<br /><span class="title-accent">包括的な</span><br />テクノロジーソリューション`,
+      "hero.sub": "Delivered With A Service MindSet — ソフトウェア開発、AI、クラウド構築、そして優秀なITエンジニアの供給で、貴社のビジネス成長を支援します。",
+      "hero.cta1": "サービスを見る", "hero.cta2": "お気軽にご相談ください →",
+      "stats.projects": "完了プロジェクト", "stats.clients": "信頼のクライアント", "stats.years": "年の経験", "stats.experts": "テクノロジー専門家",
+      "services.tag": "// サービス", "services.title": `私たちは何ができるか<br /><span class="accent">お客様のために？</span>`, "services.sub": "アイデアから製品へ — テクノロジーの旅のあらゆる段階でパートナーとして伴走します。",
+      "svc.s1.title": "ソフトウェア開発", "svc.s2.title": "クラウド & AI", "svc.s3.title": "ブロックチェーン",
+      "svc.s4.title": "デジタルトランスフォーメーション", "svc.s5.title": "ITスタッフィング", "svc.s6.title": "ITコンサルティング",
+      "about.tag": "// 会社について", "about.title": `情熱溢れる<br /><span class="accent">専門家チーム</span>`,
+      "about.desc": `AllXOneはホーチミン市を拠点とするITサービス企業です。<em>「卓越さを追求すれば、成功は必ずついてくる」</em>という信条を大切にしています。`,
+      "about.f1": "フロントエンドからバックエンドまでのフルスタックチーム", "about.f2": "AI・クラウド・ブロックチェーンの専門家",
+      "about.f3": "柔軟な協力体制と透明なコミュニケーション", "about.f4": "品質とスケジュール遵守へのコミットメント", "about.cta": "詳しく見る",
+      "products.tag": "// 製品", "products.title": `注目の<span class="accent">プロダクト</span>`, "products.sub": "多様なポートフォリオ — AI採用プラットフォームからゲームアプリ、音楽変換ツールまで。", "products.detail": "詳細を見る →",
+      "prod.p1.name": "AI採用プラットフォーム", "prod.p2.name": "GameHubプラットフォーム", "prod.p3.name": "ミュージックコンバーター",
+      "cta.tag": "// お問い合わせ", "cta.title": `プロジェクトを<br /><span class="accent">始めましょう</span>`, "cta.sub": "シンプルなアイデアから複雑なシステムまで — いつでもご相談ください。",
+      "footer.services": "サービス", "footer.company": "会社情報", "footer.recruit": "採用情報", "footer.copy": "© 2024 AllXOne — IT Xサービス有限会社",
+      "nav.products": "製品", "nav.contact_link": "お問い合わせ",
+    }
+  };
+
+  let currentLang = localStorage.getItem('axLang') || 'vi';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('axLang', lang);
+    document.documentElement.lang = lang;
+    const dict = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (dict[k] !== undefined) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const k = el.getAttribute('data-i18n-html');
+      if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+  applyLang(currentLang);
+
+  /* ══ HAMBURGER ══ */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.style.display === 'flex';
+      Object.assign(navLinks.style, {
+        display:      open ? 'none' : 'flex',
+        flexDirection:'column',
+        position:     'absolute',
+        top:          '64px',
+        left:         '0',
+        right:        '0',
+        background:   'rgba(6,8,16,0.97)',
+        padding:      '1rem 2rem',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        zIndex:       '9999',
+      });
+    });
+  }
+
+  /* ══ SCROLL ANIMATIONS ══ */
+  const cards = document.querySelectorAll('.service-card, .product-card');
+  const obs   = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
+  }, { threshold: 0.1 });
+  cards.forEach(c => { c.style.animationPlayState = 'paused'; obs.observe(c); });
+</script>
+
+</body>
+</html>
